@@ -1,4 +1,7 @@
 ---
+# Tiny Tapeout specification version
+yaml_version: 6
+
 project:
   title:        "Custom AI Accelerator"
   author:       "ALSA"
@@ -17,7 +20,7 @@ project:
   source_files:
     - "tt_um_ai_accelerator.v"
 
-# Pinout definition (Wajib diisi semua teksnya, tidak boleh "")
+# Pinout definition
 pinout:
   ui[0]: "Activation A bit 0"
   ui[1]: "Activation A bit 1"
@@ -46,7 +49,6 @@ pinout:
   uio[6]: "Weight W bit 6"
   uio[7]: "Weight W bit 7"
 
-# Do not change the following format!
 how_it_works: "Feeds 8-bit activation to ui_in and 8-bit weight to uio_in. The hardware computes MAC accumulation and passes through ReLU."
 
 how_to_test: "Enable clock, assert reset low then high. Feed data to ui_in and uio_in, verify uo_out contains positive accumulated value."
